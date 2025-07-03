@@ -909,8 +909,8 @@ const Header5 = () => {
                   </ul>
                 </li>
                 <li>
-                  <Link href="/blogs">
-                    <span>Blog</span>
+                  <Link href="/insights">
+                    <span>Insights</span>
                   </Link>
                 </li>
               </ul>
