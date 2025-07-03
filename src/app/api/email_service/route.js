@@ -3,13 +3,13 @@ import { NextResponse } from "next/server";
 
 const resend = new Resend(process.env.Email_Service_Key);
 
-const headers = {
-  "Access-Control-Allow-Origin": "*", // For security, replace with your domain in production
+const CORS_HEADERS = {
+  "Access-Control-Allow-Origin": "*", 
   "Access-Control-Allow-Methods": "POST, OPTIONS",
   "Access-Control-Allow-Headers": "Content-Type",
 };
 
-// Handle POST (actual form submission)
+// ✅ Handle the POST (actual form submission)
 export async function POST(req) {
   try {
     const body = await req.json();
@@ -31,20 +31,23 @@ export async function POST(req) {
 
     return new NextResponse(JSON.stringify({ success: true, data }), {
       status: 200,
-      headers,
+      headers: CORS_HEADERS,
     });
   } catch (error) {
     return new NextResponse(
       JSON.stringify({ success: false, error: error.message }),
-      { status: 500, headers }
+      {
+        status: 500,
+        headers: CORS_HEADERS,
+      }
     );
   }
 }
 
-// Handle preflight OPTIONS request (required for CORS)
+// ✅ Handle OPTIONS (CORS preflight request)
 export async function OPTIONS() {
   return new NextResponse(null, {
     status: 204,
-    headers,
+    headers: CORS_HEADERS,
   });
 }
