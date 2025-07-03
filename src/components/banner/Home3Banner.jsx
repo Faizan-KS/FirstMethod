@@ -96,7 +96,7 @@ const Home3Banner = () => {
             {/* Above div had flex-row-reverse */}
             {/* Video starts */}
             <div className="col-lg-4 d-lg-block d-none">
-              <img src="/assets/img/home3/homepage-img.png" alt="" />
+              <img src="/assets/img/home3/homebanner.png" alt="" />
             </div>
             {/* <div className="col-lg-6 d-lg-block d-none">
                             <div className="home3-video-wrapper">
