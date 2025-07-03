@@ -1,10 +1,9 @@
-"use client"
-import React, { useMemo, useRef, useState } from 'react'
-// import AwardListSection from '@/components/AwardListSection'
-import Home3Footer from '@/components/Footer/Home3Footer'
-import Header3 from '@/components/header/Header3'
-import Home3PartnerSection from '@/components/partner-sections/Home3PartnerSection'
-import { Swiper, SwiperSlide } from "swiper/react";
+"use client";
+import { useMemo, useRef, useState } from "react";
+import Home5Footer from "@/components/Footer/Home5Footer";
+import Home1ContactSection from "@/components/contact-section/Home1ContactSection";
+import Header5 from "@/components/header/Header5";
+import Home3TestimonialSection from "@/components/testimonial-section/Home3TestimonialSection";
 import SwiperCore, {
     Autoplay,
     EffectFade,
@@ -12,142 +11,144 @@ import SwiperCore, {
     Pagination,
 } from "swiper";
 import Lightbox from "yet-another-react-lightbox";
-import "yet-another-react-lightbox/styles.css";
 import Fullscreen from "yet-another-react-lightbox/plugins/fullscreen";
-import Counter from '@/components/common/Counter'
-import Link from 'next/link'
-import Header5 from '@/components/header/Header5'
-import Home1TestimonialSection from '@/components/testimonial-section/Home1TestimonialSection'
-import Home3TestimonialSection from '@/components/testimonial-section/Home3TestimonialSection'
-import Home5Footer from '@/components/Footer/Home5Footer'
-import Home1ContactSection from '@/components/contact-section/Home1ContactSection'
+import "yet-another-react-lightbox/styles.css";
 SwiperCore.use([Autoplay, EffectFade, Navigation, Pagination]);
 const AboutPage = () => {
-    const [isOpenimg, setOpenimg] = useState({
-        openingState: false,
-        openingIndex: 0,
-    });
-    const ref3 = useRef(null)
-    const testimonialSettings = useMemo(() => {
-        return {
-            speed: 1500,
-            spaceBetween: 30,
-            loop: true,
-            effect: 'fade', // Use fade effect
-            fadeEffect: { crossFade: true },
-            autoplay: {
-                delay: 2500,
-                disableOnInteraction: false,
-            },
-            navigation: {
-                nextEl: ".testimonial-slider-next",
-                prevEl: ".testimonial-slider-prev",
-            },
-        };
-    }, []);
-    const bannerSettings = useMemo(() => {
-        return {
-            spaceBetween: 24,
-            autoplay: {
-                delay: 2000, // Autoplay duration in milliseconds
-                disableOnInteraction: false,
-            },
-            breakpoints: {
-                280: {
-                    slidesPerView: 1,
-                },
-                350: {
-                    slidesPerView: 2,
-                    spaceBetween: 10,
-                },
-                576: {
-                    slidesPerView: 3,
-                    spaceBetween: 15,
-                },
-                768: {
-                    slidesPerView: 4,
-                },
-                992: {
-                    slidesPerView: 5,
-                },
-                1200: {
-                    slidesPerView: 6,
-                    spaceBetween: 15,
-                },
-                1400: {
-                    slidesPerView: 6,
-                },
-            },
-        };
-    }, []);
-    const teamSettings = useMemo(() => {
-        return {
-            slidesPerView: "auto",
-            speed: 1500,
-            spaceBetween: 24,
-            autoplay: {
-                delay: 2500, // Autoplay duration in milliseconds
-                pauseOnMouseEnter: true,
-                disableOnInteraction: false,
-            },
+  const [isOpenimg, setOpenimg] = useState({
+    openingState: false,
+    openingIndex: 0,
+  });
+  const ref3 = useRef(null);
+  const testimonialSettings = useMemo(() => {
+    return {
+      speed: 1500,
+      spaceBetween: 30,
+      loop: true,
+      effect: "fade", // Use fade effect
+      fadeEffect: { crossFade: true },
+      autoplay: {
+        delay: 2500,
+        disableOnInteraction: false,
+      },
+      navigation: {
+        nextEl: ".testimonial-slider-next",
+        prevEl: ".testimonial-slider-prev",
+      },
+    };
+  }, []);
+  const bannerSettings = useMemo(() => {
+    return {
+      spaceBetween: 24,
+      autoplay: {
+        delay: 2000, // Autoplay duration in milliseconds
+        disableOnInteraction: false,
+      },
+      breakpoints: {
+        280: {
+          slidesPerView: 1,
+        },
+        350: {
+          slidesPerView: 2,
+          spaceBetween: 10,
+        },
+        576: {
+          slidesPerView: 3,
+          spaceBetween: 15,
+        },
+        768: {
+          slidesPerView: 4,
+        },
+        992: {
+          slidesPerView: 5,
+        },
+        1200: {
+          slidesPerView: 6,
+          spaceBetween: 15,
+        },
+        1400: {
+          slidesPerView: 6,
+        },
+      },
+    };
+  }, []);
+  const teamSettings = useMemo(() => {
+    return {
+      slidesPerView: "auto",
+      speed: 1500,
+      spaceBetween: 24,
+      autoplay: {
+        delay: 2500, // Autoplay duration in milliseconds
+        pauseOnMouseEnter: true,
+        disableOnInteraction: false,
+      },
 
-            navigation: {
-                nextEl: ".about-page-team-slider-next",
-                prevEl: ".about-page-team-slider-prev",
-            },
+      navigation: {
+        nextEl: ".about-page-team-slider-next",
+        prevEl: ".about-page-team-slider-prev",
+      },
 
-            breakpoints: {
-                280: {
-                    slidesPerView: 1,
-                },
-                386: {
-                    slidesPerView: 1,
-                },
-                576: {
-                    slidesPerView: 2,
-                    spaceBetween: 15,
-                },
-                768: {
-                    slidesPerView: 2,
-                    spaceBetween: 15,
-                },
-                992: {
-                    slidesPerView: 3,
-                },
-                1200: {
-                    slidesPerView: 4,
-                },
-                1400: {
-                    slidesPerView: 4,
-                },
-            },
-        };
-    }, []);
-    return (
-        <>
-            <Header5 />
-            <div className="breadcrumb-section mb-130">
-                <div className="container">
-                    <div className="row justify-content-center">
-                        <div className="col-xl-7 col-lg-8">
-                            <div className="banner-content">
-                                <h1>To Make Unique Depth <br /> Bold Implact</h1>
-                                <ul className="breadcrumb-list">
-                                    <li><a href="/">Home</a></li>
-                                    <li>
-                                        <svg width={25} height={6} viewBox="0 0 25 6" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M5 2.5L0 0.113249V5.88675L5 3.5V2.5ZM20 3.5L25 5.88675V0.113249L20 2.5V3.5ZM4.5 3.5H20.5V2.5H4.5V3.5Z" />
-                                        </svg>
-                                        Company
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+      breakpoints: {
+        280: {
+          slidesPerView: 1,
+        },
+        386: {
+          slidesPerView: 1,
+        },
+        576: {
+          slidesPerView: 2,
+          spaceBetween: 15,
+        },
+        768: {
+          slidesPerView: 2,
+          spaceBetween: 15,
+        },
+        992: {
+          slidesPerView: 3,
+        },
+        1200: {
+          slidesPerView: 4,
+        },
+        1400: {
+          slidesPerView: 4,
+        },
+      },
+    };
+  }, []);
+  return (
+    <>
+      <Header5 />
+      <div className="breadcrumb-section mb-130">
+        <div className="container">
+          <div className="row justify-content-center">
+            <div className="col-xl-7 col-lg-8">
+              <div className="banner-content">
+                <h1>
+                  To Make Unique Depth <br /> Bold Implact
+                </h1>
+                <ul className="breadcrumb-list">
+                  <li>
+                    <a href="/">Home</a>
+                  </li>
+                  <li>
+                    <svg
+                      width={25}
+                      height={6}
+                      viewBox="0 0 25 6"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path d="M5 2.5L0 0.113249V5.88675L5 3.5V2.5ZM20 3.5L25 5.88675V0.113249L20 2.5V3.5ZM4.5 3.5H20.5V2.5H4.5V3.5Z" />
+                    </svg>
+                    Company
+                  </li>
+                </ul>
+              </div>
             </div>
-            <div className="about-page-banner-section mb-50">
-                {/* <div className="slider-area mb-70">
+          </div>
+        </div>
+      </div>
+      <div className="about-page-banner-section mb-50">
+        {/* <div className="slider-area mb-70">
                     <Swiper {...bannerSettings} className="swiper about-page-banner-slider">
                         <div className="swiper-wrapper">
                             <SwiperSlide className="swiper-slide">
@@ -183,33 +184,46 @@ const AboutPage = () => {
                         </div>
                     </Swiper>
                 </div> */}
-                <div className="banner-content-wrap">
-                    <div className="container">
-                        <div className="row gy-4 justify-content-between">
-                            {/* <div className="col-xl-5 col-lg-6">
+        <div className="banner-content-wrap">
+          <div className="container">
+            <div className="row gy-4 justify-content-between">
+              {/* <div className="col-xl-5 col-lg-6">
                                 <div className="title-area">
                                     <h2>To Make Unique Depth, Bold Implact.</h2>
                                     <span>“ We believe in bespoke strategies, designed specifically for your business needs.”</span>
                                 </div>
                             </div> */}
-                            <div className="">
-                                <div className="banner-content">
-                                    <p>Our diverse background spans <span>Design</span>, <span>Marketing</span>, and <span>Technology</span>, allowing us to offer full-spectrum digital services. From startups to established enterprises, we tailor solutions to fit your unique needs, <span>no matter your industry or size.</span></p>
-                                    <p>We work closely with our clients to understand their goals, challenges, and opportunities, ensuring that every solution is custom-fit to deliver measurable results. By combining cutting-edge technology with creative innovation, we help businesses not only keep up but get ahead.</p>
-                                    {/* <Link href="/contact" className="primary-btn3 three btn-hover">
+              <div className="">
+                <div className="banner-content">
+                  <p>
+                    Our diverse background spans <span>Design</span>,{" "}
+                    <span>Marketing</span>, and <span>Technology</span>,
+                    allowing us to offer full-spectrum digital services. From
+                    startups to established enterprises, we tailor solutions to
+                    fit your unique needs,{" "}
+                    <span>no matter your industry or size.</span>
+                  </p>
+                  <p>
+                    We work closely with our clients to understand their goals,
+                    challenges, and opportunities, ensuring that every solution
+                    is custom-fit to deliver measurable results. By combining
+                    cutting-edge technology with creative innovation, we help
+                    businesses not only keep up but get ahead.
+                  </p>
+                  {/* <Link href="/contact" className="primary-btn3 three btn-hover">
                                         Start The Journey
                                         <svg width={10} height={10} viewBox="0 0 10 10" xmlns="http://www.w3.org/2000/svg">
                                             <path d="M1 9L9 1M9 1C7.22222 1.33333 3.33333 2 1 1M9 1C8.66667 2.66667 8 6.33333 9 9" strokeWidth="1.5" strokeLinecap="round" />
                                         </svg>
                                         <span />
                                     </Link> */}
-                                </div>
-                            </div>
-                        </div>
-                    </div>
                 </div>
+              </div>
             </div>
-            {/* <div className="about-page-counter-section">
+          </div>
+        </div>
+      </div>
+      {/* <div className="about-page-counter-section">
                 <div className="container">
                     <div className="counter-wrapper">
                         <div className="row gy-md-5 gy-4">
@@ -269,7 +283,7 @@ const AboutPage = () => {
                     </div>
                 </div>
             </div> */}
-            {/* <div className="about-page-feature-section">
+      {/* <div className="about-page-feature-section">
                 <div className="container">
                     <div className="row justify-content-center mb-70 wow animate fadeInDown" data-wow-delay="200ms" data-wow-duration="1500ms">
                         <div className="col-xl-6 col-lg-8">
@@ -360,7 +374,7 @@ const AboutPage = () => {
                     </div>
                 </div>
             </div> */}
-            {/* <div className="about-page-team-section mb-130">
+      {/* <div className="about-page-team-section mb-130">
                 <div className="container">
                     <div className="row align-items-lg-end mb-70">
                         <div className="col-lg-4">
@@ -634,112 +648,190 @@ const AboutPage = () => {
                     </div>
                 </div>
             </div> */}
-            <div className="about-page-gallery-section">
-                <div className="container">
-                    <div className="row mb-70">
-                        <div className="col-lg-12">
-                            <div className="section-title-wrap">
-                                <img src="/assets/img/innerpages/about-gallery-title-img.gif" alt="" />
-                                <div className="section-title three white">
-                                    <h2>Collective of
-                                        Creative Thinkers.</h2>
-                                    <p>We are a collective of creative thinkers, tech enthusiasts, and strategic innovators. Our passion lies in helping businesses thrive in the world.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="gallery-img-wrap">
-                        <div className="row g-2">
-                            <div className="col-lg-4 col-md-6">
-                                <div className="row g-2">
-                                    <div className="col-md-12 d-md-flex justify-content-md-end">
-                                        <a data-fancybox="gallery-01" style={{ cursor: "pointer" }} onClick={() => setOpenimg({ openingState: true, openingIndex: 0 })}>
-                                            <img src="/assets/img/innerpages/about-page-gallery-img1.jpg" alt="" />
-                                        </a>
-                                    </div>
-                                    <div className="col-md-12 d-md-flex justify-content-md-end">
-                                        <a data-fancybox="gallery-01" style={{ cursor: "pointer" }} onClick={() => setOpenimg({ openingState: true, openingIndex: 1 })}>
-                                            <img src="/assets/img/innerpages/about-page-gallery-img2.jpg" alt="" />
-                                        </a>
-                                    </div>
-                                    <div className="col-md-12 d-lg-flex d-none align-items-center justify-content-md-end gap-5">
-                                        <div className="vector">
-                                            <svg width={88} height={64} viewBox="0 0 88 64" xmlns="http://www.w3.org/2000/svg">
-                                                <path d="M88 0.00195312V64.002H0L88 0.00195312Z" />
-                                                <path d="M60 8.00195L10 44.002V8.00195H60Z" />
-                                            </svg>
-                                        </div>
-                                    </div>
-                                    <div className="col-md-12 d-lg-none d-md-flex justify-content-md-end">
-                                        <a data-fancybox="gallery-01" style={{ cursor: "pointer" }} onClick={() => setOpenimg({ openingState: true, openingIndex: 2 })}>
-                                            <img src="/assets/img/innerpages/about-page-gallery-img6.jpg" alt="" />
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="col-lg-4 col-md-6">
-                                <div className="row g-2">
-                                    <div className="col-md-12 d-md-flex justify-content-md-end">
-                                        <a data-fancybox="gallery-01" style={{ cursor: "pointer" }} onClick={() => setOpenimg({ openingState: true, openingIndex: 3 })}>
-                                            <img src="/assets/img/innerpages/about-page-gallery-img3.jpg" alt="" />
-                                        </a>
-                                    </div>
-                                    <div className="col-md-12 d-md-flex justify-content-md-end">
-                                        <a data-fancybox="gallery-01" style={{ cursor: "pointer" }} onClick={() => setOpenimg({ openingState: true, openingIndex: 4 })}>
-                                            <img src="/assets/img/innerpages/about-page-gallery-img4.jpg" alt="" />
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="col-lg-4 col-md-6">
-                                <div className="row g-2">
-                                    <div className="col-md-12 d-lg-flex d-none align-items-center gap-5">
-                                        <div className="vector two">
-                                            <svg width={88} height={88} viewBox="0 0 88 88" xmlns="http://www.w3.org/2000/svg">
-                                                <g>
-                                                    <path d="M0 0.00195312L88 88.0019H0V0.00195312Z" />
-                                                    <circle cx="54.12" cy="17.4553" r="17.4533" />
-                                                </g>
-                                            </svg>
-                                        </div>
-                                    </div>
-                                    <div className="col-md-12">
-                                        <a data-fancybox="gallery-01" style={{ cursor: "pointer" }} onClick={() => setOpenimg({ openingState: true, openingIndex: 5 })}>
-                                            <img src="/assets/img/innerpages/about-page-gallery-img5.jpg" alt="" />
-                                        </a>
-                                    </div>
-                                    <div className="col-md-12 d-lg-block d-none">
-                                        <a data-fancybox="gallery-01" style={{ cursor: "pointer" }} onClick={() => setOpenimg({ openingState: true, openingIndex: 6 })}>
-                                            <img src="/assets/img/innerpages/about-page-gallery-img6.jpg" alt="" />
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <Lightbox
-                    className="img-fluid"
-                    open={isOpenimg.openingState}
-                    plugins={[Fullscreen]}
-                    index={isOpenimg.openingIndex}
-                    close={() => setOpenimg(false)}
-                    styles={{ container: { backgroundColor: "rgba(0, 0, 0, .9)" } }}
-                    slides={[
-                        { src: "/assets/img/innerpages/about-page-gallery-img1-big.jpg" },
-                        { src: "/assets/img/innerpages/about-page-gallery-img2-big.jpg" },
-                        { src: "/assets/img/innerpages/about-page-gallery-img6-big.jpg" },
-                        { src: "/assets/img/innerpages/about-page-gallery-img3-big.jpg" },
-                        { src: "/assets/img/innerpages/about-page-gallery-img4-big.jpg" },
-                        { src: "/assets/img/innerpages/about-page-gallery-img5-big.jpg" },
-                        { src: "/assets/img/innerpages/about-page-gallery-img6-big.jpg" },
-
-                    ]}
+      <div className="about-page-gallery-section">
+        <div className="container">
+          <div className="row mb-70">
+            <div className="col-lg-12">
+              <div className="section-title-wrap">
+                <img
+                  src="/assets/img/innerpages/about-gallery-title-img.gif"
+                  alt=""
                 />
+                <div className="section-title three white">
+                  <h2>Collective of Creative Thinkers.</h2>
+                  <p>
+                    We are a collective of creative thinkers, tech enthusiasts,
+                    and strategic innovators. Our passion lies in helping
+                    businesses thrive in the world.
+                  </p>
+                </div>
+              </div>
             </div>
-            {/* <AwardListSection /> */}
-            {/* <Home3PartnerSection /> */}
-            {/* <div className="about-page-testimonial-section">
+          </div>
+          <div className="gallery-img-wrap">
+            <div className="row g-2">
+              <div className="col-lg-4 col-md-6">
+                <div className="row g-2">
+                  <div className="col-md-12 d-md-flex justify-content-md-end">
+                    <a
+                      data-fancybox="gallery-01"
+                      style={{ cursor: "pointer" }}
+                      onClick={() =>
+                        setOpenimg({ openingState: true, openingIndex: 0 })
+                      }
+                    >
+                      <img
+                        src="/assets/img/innerpages/about-page-gallery-img1.jpg"
+                        alt=""
+                      />
+                    </a>
+                  </div>
+                  <div className="col-md-12 d-md-flex justify-content-md-end">
+                    <a
+                      data-fancybox="gallery-01"
+                      style={{ cursor: "pointer" }}
+                      onClick={() =>
+                        setOpenimg({ openingState: true, openingIndex: 1 })
+                      }
+                    >
+                      <img
+                        src="/assets/img/innerpages/about-page-gallery-img2.jpg"
+                        alt=""
+                      />
+                    </a>
+                  </div>
+                  <div className="col-md-12 d-lg-flex d-none align-items-center justify-content-md-end gap-5">
+                    <div className="vector">
+                      <svg
+                        width={88}
+                        height={64}
+                        viewBox="0 0 88 64"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path d="M88 0.00195312V64.002H0L88 0.00195312Z" />
+                        <path d="M60 8.00195L10 44.002V8.00195H60Z" />
+                      </svg>
+                    </div>
+                  </div>
+                  <div className="col-md-12 d-lg-none d-md-flex justify-content-md-end">
+                    <a
+                      data-fancybox="gallery-01"
+                      style={{ cursor: "pointer" }}
+                      onClick={() =>
+                        setOpenimg({ openingState: true, openingIndex: 2 })
+                      }
+                    >
+                      <img
+                        src="/assets/img/innerpages/about-page-gallery-img6.jpg"
+                        alt=""
+                      />
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div className="col-lg-4 col-md-6">
+                <div className="row g-2">
+                  <div className="col-md-12 d-md-flex justify-content-md-end">
+                    <a
+                      data-fancybox="gallery-01"
+                      style={{ cursor: "pointer" }}
+                      onClick={() =>
+                        setOpenimg({ openingState: true, openingIndex: 3 })
+                      }
+                    >
+                      <img
+                        src="/assets/img/innerpages/about-page-gallery-img3.jpg"
+                        alt=""
+                      />
+                    </a>
+                  </div>
+                  <div className="col-md-12 d-md-flex justify-content-md-end">
+                    <a
+                      data-fancybox="gallery-01"
+                      style={{ cursor: "pointer" }}
+                      onClick={() =>
+                        setOpenimg({ openingState: true, openingIndex: 4 })
+                      }
+                    >
+                      <img
+                        src="/assets/img/innerpages/about-page-gallery-img4.jpg"
+                        alt=""
+                      />
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div className="col-lg-4 col-md-6">
+                <div className="row g-2">
+                  <div className="col-md-12 d-lg-flex d-none align-items-center gap-5">
+                    <div className="vector two">
+                      <svg
+                        width={88}
+                        height={88}
+                        viewBox="0 0 88 88"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <g>
+                          <path d="M0 0.00195312L88 88.0019H0V0.00195312Z" />
+                          <circle cx="54.12" cy="17.4553" r="17.4533" />
+                        </g>
+                      </svg>
+                    </div>
+                  </div>
+                  <div className="col-md-12">
+                    <a
+                      data-fancybox="gallery-01"
+                      style={{ cursor: "pointer" }}
+                      onClick={() =>
+                        setOpenimg({ openingState: true, openingIndex: 5 })
+                      }
+                    >
+                      <img
+                        src="/assets/img/innerpages/about-page-gallery-img5.jpg"
+                        alt=""
+                      />
+                    </a>
+                  </div>
+                  <div className="col-md-12 d-lg-block d-none">
+                    <a
+                      data-fancybox="gallery-01"
+                      style={{ cursor: "pointer" }}
+                      onClick={() =>
+                        setOpenimg({ openingState: true, openingIndex: 6 })
+                      }
+                    >
+                      <img
+                        src="/assets/img/innerpages/about-page-gallery-img6.jpg"
+                        alt=""
+                      />
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <Lightbox
+          className="img-fluid"
+          open={isOpenimg.openingState}
+          plugins={[Fullscreen]}
+          index={isOpenimg.openingIndex}
+          close={() => setOpenimg(false)}
+          styles={{ container: { backgroundColor: "rgba(0, 0, 0, .9)" } }}
+          slides={[
+            { src: "/assets/img/innerpages/about-page-gallery-img1-big.jpg" },
+            { src: "/assets/img/innerpages/about-page-gallery-img2-big.jpg" },
+            { src: "/assets/img/innerpages/about-page-gallery-img6-big.jpg" },
+            { src: "/assets/img/innerpages/about-page-gallery-img3-big.jpg" },
+            { src: "/assets/img/innerpages/about-page-gallery-img4-big.jpg" },
+            { src: "/assets/img/innerpages/about-page-gallery-img5-big.jpg" },
+            { src: "/assets/img/innerpages/about-page-gallery-img6-big.jpg" },
+          ]}
+        />
+      </div>
+      {/* <AwardListSection /> */}
+      {/* <Home3PartnerSection /> */}
+      {/* <div className="about-page-testimonial-section">
                 <div className="container">
                     <div className="row justify-content-center mb-70 wow animate fadeInDown" data-wow-delay="200ms" data-wow-duration="1500ms">
                         <div className="col-lg-5">
@@ -901,12 +993,12 @@ const AboutPage = () => {
                     </div>
                 </div>
             </div> */}
-            <Home3TestimonialSection className="mb-130"/>
-            <Home1ContactSection />
+      <Home3TestimonialSection className="mb-130" />
+      <Home1ContactSection />
 
-            <Home5Footer />
-        </>
-    )
-}
+      <Home5Footer />
+    </>
+  );
+};
 
-export default AboutPage
+export default AboutPage;

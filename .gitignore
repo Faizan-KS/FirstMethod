@@ -1,10 +1,18 @@
 src/app/case-study
+#----------------------------------------
+src/app/blogs/*
 
+!src/app/blogs/page.js
+#----------------------------------------------
 src/app/digital-agency
 
 src/app/fintech
 
 src/app/industries
+
+src/app/industry/style2
+
+src/app/industry/page.jsx
 
 src/app/it-consulting
 
@@ -21,6 +29,8 @@ src/app/social-responsibility
 src/app/startup-agency-dark
 
 src/app/team
+#------------------------------------------------------
+
 #----------------------------------------
 src/components/header/*
 
