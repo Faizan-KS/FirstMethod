@@ -1,8 +1,6 @@
 "use client";
-import toast from "react-hot-toast";
-import ThrowableItems from "@/utils/ThrowableItems";
-import Counter from "../common/Counter";
 import { useRef, useState } from "react";
+import toast from "react-hot-toast";
 
 const Home1ContactSection = () => {
   const ref3 = useRef(null);

@@ -1,17 +1,16 @@
 "use client";
-import React, { useMemo, useState } from "react";
+import { useMemo, useState } from "react";
 
-import { Swiper, SwiperSlide } from "swiper/react";
+import "react-modal-video/css/modal-video.css";
 import SwiperCore, {
     Autoplay,
     EffectFade,
     Navigation,
     Pagination,
 } from "swiper";
+import { Swiper, SwiperSlide } from "swiper/react";
 
 SwiperCore.use([Autoplay, EffectFade, Navigation, Pagination]);
-import ModalVideo from "react-modal-video";
-import "react-modal-video/css/modal-video.css";
 
 const Home3TestimonialSection = () => {
     const [isOpen, setOpen] = useState(false);

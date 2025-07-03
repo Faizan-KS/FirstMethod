@@ -1,11 +1,10 @@
 "use client";
 
-import React, { useEffect, useRef } from "react";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
-gsap.registerPlugin(ScrollTrigger);
 import Link from "next/link";
-import Counter from "../common/Counter";
+import { useRef } from "react";
+gsap.registerPlugin(ScrollTrigger);
 
 const Home3Banner = () => {
   const videoAreaRef = useRef(null);

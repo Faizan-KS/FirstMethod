@@ -1,4 +1,4 @@
-import { DM_Sans, Kanit, Lora } from "next/font/google";
+import { DM_Sans, Lora } from "next/font/google";
 
 import localFont from "next/font/local";
 export const lora = Lora({
