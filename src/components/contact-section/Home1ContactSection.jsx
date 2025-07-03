@@ -25,7 +25,7 @@ const Home1ContactSection = () => {
     const loadingToast = toast.loading("Sending your message...");
 
     try {
-      const res = await fetch("/api/email_service", {
+      const res = await fetch("/api/send", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -740,13 +740,3 @@ const Home1ContactSection = () => {
 };
 
 export default Home1ContactSection;
-
-{
-  /* <span className="throwable-item">Machine Learning</span>
-                                <span className="pink throwable-item">Professional Expert</span>
-                                <span className="blue throwable-item">06 Global Branches</span>
-                                <span className="green throwable-item">99% Success</span>
-                                <span className="throwable-item">Data Analytics</span>
-                                <span className="light-blue throwable-item">Product Design</span>
-                                <span className="light-green throwable-item">IT Consulting</span> */
-}
