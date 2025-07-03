@@ -298,7 +298,7 @@ const Header5 = () => {
         <div className="container-fluid d-flex flex-nowrap align-items-center justify-content-between">
           <div className="logo-and-menu-area">
             <div className="company-logo">
-              <Link href="" className="">
+              <Link href="/" className="">
                 <img
                   alt="image"
                   className="img-fluid"
@@ -334,7 +334,7 @@ const Header5 = () => {
                     pathname === "/solutions" ? "active" : ""
                   }`}
                 >
-                  <Link href="/solutions" className="drop-down">
+                  <Link href="" className="drop-down">
                     Solution
                   </Link>
                   <i

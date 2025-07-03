@@ -3,7 +3,7 @@ import Counter from '@/components/common/Counter'
 import Home5Footer from '@/components/Footer/Home5Footer'
 import Header3 from '@/components/header/Header3'
 import Link from 'next/link'
-import React, { useRef } from 'react'
+import { useRef } from 'react'
 
 const ServicePage = () => {
     const ref2 = useRef(null);

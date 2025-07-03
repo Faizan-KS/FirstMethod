@@ -1,17 +1,14 @@
 "use client";
-import React, { useMemo } from "react";
+import Home1ContactSection from "@/components/contact-section/Home1ContactSection";
 import Home5Footer from "@/components/Footer/Home5Footer";
-import Header3 from "@/components/header/Header3";
-import Link from "next/link";
-import { Swiper, SwiperSlide } from "swiper/react";
+import Header5 from "@/components/header/Header5";
+import { useMemo } from "react";
 import SwiperCore, {
   Autoplay,
   EffectFade,
   Navigation,
   Pagination,
 } from "swiper";
-import Header5 from "@/components/header/Header5";
-import Home1ContactSection from "@/components/contact-section/Home1ContactSection";
 
 SwiperCore.use([Autoplay, EffectFade, Navigation, Pagination]);
 const ServiceDetailsPage = () => {

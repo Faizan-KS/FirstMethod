@@ -1,4 +1,6 @@
 src/app/case-study
+
+src/app/company/career/details
 #----------------------------------------
 src/app/blogs/*
 
@@ -29,6 +31,12 @@ src/app/social-responsibility
 src/app/startup-agency-dark
 
 src/app/team
+
+src/app/solutions/details
+
+src/app/solutions/style2
+
+src/app/solutions/page.js
 #------------------------------------------------------
 
 #----------------------------------------

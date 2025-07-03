@@ -1,9 +1,6 @@
 import Home1ContactSection from "@/components/contact-section/Home1ContactSection";
-import Home3Footer from "@/components/Footer/Home3Footer";
 import Home5Footer from "@/components/Footer/Home5Footer";
-import Header3 from "@/components/header/Header3";
 import Header5 from "@/components/header/Header5";
-import React from "react";
 
 const ContactPage = () => {
   return (
